@@ -1,0 +1,53 @@
+{
+    "name": "Livestream",
+    "permissions": {
+        "network": "Needs to access stream"
+    },
+    "options": [{
+        "title": "Channels",
+        "type": "section"
+    }, {
+        "title": "Channels",
+        "name": "channels",
+        "type": "list",
+        "itemname": "Stream",
+        "items": [{
+            "title": "Stream Name",
+            "ui_width": 4,
+            "name": "name",
+            "type": "string",
+            "default": "My stream"
+        }, {
+            "title": "Stream url (e.g. twitch.tv/<xyz>)",
+            "ui_width": 8,
+            "name": "url",
+            "type": "string",
+            "default": ""
+        }],
+        "default": [{
+            "name": "NASA TV Media",
+            "url": "https://www.youtube.com/watch?v=P11y8N22Rq0"
+        }, {
+            "name": "NASA Live - Earth From Space",
+            "url": "https://www.youtube.com/watch?v=RtU_mdL2vBM"
+        }]
+    }, 
+    
+    {
+        "title": "Misc",
+        "type": "section"
+    }, {
+        "title": "Logo",
+        "ui_width": 4,
+        "name": "logo",
+        "type": "resource",
+        "valid": ["image"],
+        "default": "logo.png"
+    }, {
+        "title": "Audio",
+        "ui_width": 4,
+        "name": "audio",
+        "type": "boolean",
+        "default": true
+    }]
+}

@@ -1,0 +1,9 @@
+{
+    "name": "Live Streaming",
+    "author": "Florian Wesch <fw@info-beamer.com>",
+    "desc": "Play from various internet stream sources. Experimental",
+    "lifecycle": "beta",
+    "runtime": {
+        "outside_sources": true
+    }
+}
