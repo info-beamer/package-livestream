@@ -7,3 +7,9 @@ like Twitch, Youtube or others. You can find the full list of supported sources 
 
 This package is still experimental, so streaming might not work. You also get little feedback about the state of the
 stream. If you run into problems, please use the [issue tracker](https://github.com/info-beamer/package-livestream/issues).
+
+## Remote control and channels
+
+You can define multiple channels. Each with its own name and stream url source. You can use use `channel up` and
+`channel down` keys on your TV remote to switch between the channels. This needs an info-beamer hosted OS version
+that supports [CEC](https://info-beamer.com/blog/info-beamer-hosted-adds-cec-support).
