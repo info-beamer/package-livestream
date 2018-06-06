@@ -81,6 +81,7 @@ end
 
 util.data_mapper{
     ["sys/cec/key"] = handle_key;
+    ["remote"] = handle_key;
 }
 
 function node.render()

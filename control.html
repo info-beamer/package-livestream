@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <button id='up' class='btn btn-default'>Channel Up</button>
+    <button id='down' class='btn btn-default'>Channel Down</button>
+
+    <script src="hosted.js"></script>
+
+    <script>
+      ib.setDefaultStyle();
+
+      document.getElementById('up').addEventListener('click', function(evt) {
+        ib.sendCommand("remote/key", "channel-up");
+      });
+
+      document.getElementById('down').addEventListener('click', function(evt) {
+        ib.sendCommand("remote/key", "channel-down");
+      });
+    </script>
+  </body>
+</html>

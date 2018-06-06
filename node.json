@@ -1,5 +1,6 @@
 {
     "name": "Livestream",
+    "control_ui": "control.html",
     "permissions": {
         "network": "Needs to access stream"
     },
