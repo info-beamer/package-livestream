@@ -13,3 +13,7 @@ stream. If you run into problems, please use the [issue tracker](https://github.
 You can define multiple channels. Each with its own name and stream url source. You can use use `channel up` and
 `channel down` keys on your TV remote to switch between the channels. This needs an info-beamer hosted OS version
 that supports [CEC](https://info-beamer.com/blog/info-beamer-hosted-adds-cec-support).
+
+Alternatively you can visit the device detail page for any of your devices and use the 
+[remote control interface](https://info-beamer.com/blog/introducing-device-remote-control-interfaces) to trigger
+`Channel Up` or `Channel Down` events. This allows you to switch channels from remote.
