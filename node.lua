@@ -102,6 +102,7 @@ function node.render()
     if video then
         local state, w, h = video:state()
         if state == "loaded" then
+            gl.clear(0, 0, 0, 1)
             local x1, y1, x2, y2 = util.scale_into(WIDTH, HEIGHT, w, h)
             video:target(x1, y1, x2, y2):layer(2)
         elseif state == "finished" or state == "error" then
