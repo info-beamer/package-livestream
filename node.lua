@@ -11,7 +11,7 @@ local video
 local next_try = 0
 
 local audio = true
-local logo = resource.load_image "logo.png"
+local logo = resource.load_image "package.png"
 
 local function stop_and_wait(t)
     if video then
