@@ -95,7 +95,7 @@ function node.render()
     local y = HEIGHT/2 + w/2 + 40
     x = x + font:write(x, y, text, 30, .2,.2,.8,1)
     local dotdot = ("..."):sub(0, 1+math.floor(sys.now()*2 % 3)) 
-    font:write(x, y, dotdot, 30, 0,0,0,1)
+    font:write(x, y, dotdot, 30, .2,.2,.8,1)
 
     send_channel()
 
