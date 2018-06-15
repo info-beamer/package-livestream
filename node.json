@@ -43,7 +43,7 @@
         "name": "logo",
         "type": "resource",
         "valid": ["image"],
-        "default": "logo.png"
+        "default": "package.png"
     }, {
         "title": "Audio",
         "ui_width": 4,
