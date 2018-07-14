@@ -1,17 +1,14 @@
 #!/usr/bin/python
-import sys
-sys.dont_write_bytecode = True
-
-import zipfile, os
+import zipfile, os, sys
 if not os.path.exists('EXTRACTED'):
     z = zipfile.ZipFile('streamer.zip', 'r')
     z.extractall('.')
     z.close()
-    with file('EXTRACTED', 'wb') as out:
+    with open('EXTRACTED', 'wb') as out:
         out.write('yes')
 
-from hosted import CONFIG
-CONFIG.restart_on_update()
+from hosted import config
+config.restart_on_update()
 
 import time, traceback, threading
 from Queue import Queue
