@@ -17,3 +17,9 @@ that supports [CEC](https://info-beamer.com/blog/info-beamer-hosted-adds-cec-sup
 Alternatively you can visit the device detail page for any of your devices and use the 
 [remote control interface](https://info-beamer.com/blog/introducing-device-remote-control-interfaces) to trigger
 `Channel Up` or `Channel Down` events. This allows you to switch channels from remote.
+
+## Updates
+
+### Version sl-965c375
+
+Updated bundled streamlink to 965c375. This fixes problems with YouTube livestreams.

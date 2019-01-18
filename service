@@ -51,6 +51,7 @@ def start_stream(url):
     while len(sys.argv) > 1:
         sys.argv.pop()
     sys.argv.extend([
+        "-l", "debug",
         "--player-external-http",
         "--player-external-http-port", "8000",
         url, "best",
