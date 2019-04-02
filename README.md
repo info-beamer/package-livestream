@@ -20,6 +20,10 @@ Alternatively you can visit the device detail page for any of your devices and u
 
 ## Updates
 
+### Version sl-1.1.0
+
+Updated bundled streamlink to 1.1.0
+
 ### Version sl-965c375
 
 Updated bundled streamlink to 965c375. This fixes problems with YouTube livestreams.

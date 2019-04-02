@@ -58,7 +58,11 @@ def start_stream(url):
     ])
     print >>sys.stderr, sys.argv
     from streamlink_cli.main import main
-    main()
+    try:
+        main()
+    except SystemExit:
+        print >>sys.stderr, "Cannot start stream. waiting 30 seconds"
+        time.sleep(30)
 
 stream_url = q.get()
 start_stream(stream_url)
