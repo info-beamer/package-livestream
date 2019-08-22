@@ -20,6 +20,10 @@ Alternatively you can visit the device detail page for any of your devices and u
 
 ## Updates
 
+### Version pi4
+
+Updated for Pi4 compatibility.
+
 ### Version sl-1.1.0
 
 Updated bundled streamlink to 1.1.0
