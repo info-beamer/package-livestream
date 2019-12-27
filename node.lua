@@ -13,6 +13,9 @@ local next_try = 0
 local audio = true
 local logo = resource.load_image "package.png"
 
+local cecdown
+local cecup
+
 local function stop_and_wait(t)
     if video then
         video:dispose()
@@ -35,6 +38,8 @@ end
 util.json_watch("config.json", function(config)
     audio = config.audio
     logo = resource.load_image(config.logo.asset_name)
+    cecdown = config.cecdown
+    cecup = config.cecup
 
     channels = config.channels
     if #channels == 0 then
@@ -64,13 +69,13 @@ local function send_channel()
 end
 
 local function handle_key(key)
-    if key == "channel-down" then
+    if key == "channel-down" or key == cecdown then
         channel = channel - 1
         if channel < 1 then
             channel = #channels
         end
         stop_and_wait(0)
-    elseif key == "channel-up" then
+    elseif key == "channel-up" or key == cecup then
         channel = channel + 1
         if channel > #channels then
             channel = 1
