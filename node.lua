@@ -63,25 +63,60 @@ local function send_channel()
     end
 end
 
+local function handle_channel_down()
+    channel = channel - 1
+    if channel < 1 then
+        channel = #channels
+    end
+    stop_and_wait(0)
+end
+
+local function handle_channel_up()
+    channel = channel + 1
+    if channel > #channels then
+        channel = 1
+    end
+    stop_and_wait(0)
+end
+
+local function handle_channel_name(name)
+    -- since name is not an unique identifier,
+    -- start at current channel position
+    -- and pick next name.
+    for i = 1, #channels do
+        -- start search at current position, wrap at list end
+        local idx = (channel + i - 1) % #channels + 1
+        if channels[idx].name == name then
+            channel = idx
+            break
+        end
+    end
+    stop_and_wait(0)
+end
+
+local function handle_channel_id(id)
+    local index = tonumber(id)
+    if index and 1 <= index and index <= #channels then
+        channel = index
+        stop_and_wait(0)
+    end
+end
+
 local function handle_key(key)
     if key == "channel-down" then
-        channel = channel - 1
-        if channel < 1 then
-            channel = #channels
-        end
-        stop_and_wait(0)
+        handle_channel_down()
     elseif key == "channel-up" then
-        channel = channel + 1
-        if channel > #channels then
-            channel = 1
-        end
-        stop_and_wait(0)
+        handle_channel_up()
     end
 end
 
 util.data_mapper{
     ["sys/cec/key"] = handle_key;
     ["remote"] = handle_key;
+    ["channel/up"] = handle_channel_up;
+    ["channel/down"] = handle_channel_down;
+    ["channel/name"] = handle_channel_name;
+    ["channel/id"] = handle_channel_id;
 }
 
 function node.render()
