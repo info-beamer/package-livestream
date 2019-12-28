@@ -102,7 +102,7 @@ local function handle_channel_id(id)
     end
 end
 
-local function handle_key(key)
+local function handle_cec(key)
     if key == "channel-down" then
         handle_channel_down()
     elseif key == "channel-up" then
@@ -111,8 +111,7 @@ local function handle_key(key)
 end
 
 util.data_mapper{
-    ["sys/cec/key"] = handle_key;
-    ["remote"] = handle_key;
+    ["sys/cec/key"] = handle_cec;
     ["channel/up"] = handle_channel_up;
     ["channel/down"] = handle_channel_down;
     ["channel/name"] = handle_channel_name;
