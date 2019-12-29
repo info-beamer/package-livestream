@@ -18,6 +18,16 @@ Alternatively you can visit the device detail page for any of your devices and u
 [remote control interface](https://info-beamer.com/blog/introducing-device-remote-control-interfaces) to trigger
 `Channel Up` or `Channel Down` events. This allows you to switch channels from remote.
 
+Additionally this package provides some API endpoints to switch channels. Those can be used by sending a message to the
+node to the following paths:
+
+| Path          | Data             |
+| ------------- | ---------------- |
+| channel/up    | empty            |
+| channel/down  | empty            |
+| channel/name  | channel name     |
+| channel/id    | channel index/id |
+
 ## Updates
 
 ### Version pi4
