@@ -13,12 +13,40 @@
       ib.setDefaultStyle();
 
       document.getElementById('up').addEventListener('click', function(evt) {
-        ib.sendCommand("remote/key", "channel-up");
+        ib.sendCommand("channel/up");
       });
 
       document.getElementById('down').addEventListener('click', function(evt) {
-        ib.sendCommand("remote/key", "channel-down");
+        ib.sendCommand("channel/down");
       });
+    </script>
+    <div id=channels-chooser></div>
+    <script>
+      ib.setDefaultStyle();
+      ib.ready.then(function() {
+        var container = document.getElementById('channels-chooser');
+        if (ib.config.channels.length == 0) {
+          var info = document.createElement("em");
+          info.appendChild(document.createTextNode("No channels configured for this setup."));
+          container.appendChild(info);
+          return;
+        }
+
+        for (var channel_id in ib.config.channels) {
+          var channel_name = ib.config.channels[channel_id].name;
+
+          var btn = document.createElement("button");
+          btn.appendChild(document.createTextNode(channel_name));
+          btn.classList.add('btn');
+          btn.classList.add('btn-default');
+          let payload =  (parseInt(channel_id)+1).toString();
+          btn.addEventListener('click', function(evt) {
+            ib.sendCommand("channel/id", payload);
+          });
+          container.appendChild(btn);
+          container.appendChild(document.createTextNode(" "));
+        }
+      })
     </script>
   </body>
 </html>
