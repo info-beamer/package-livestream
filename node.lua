@@ -12,6 +12,7 @@ local next_try = 0
 
 local audio = true
 local logo = resource.load_image "package.png"
+local cec_mapping = {"channel-up", "channel-down"}
 
 local function stop_and_wait(t)
     if video then
@@ -35,6 +36,7 @@ end
 util.json_watch("config.json", function(config)
     audio = config.audio
     logo = resource.load_image(config.logo.asset_name)
+    cec_mapping = config.cec_mapping
 
     channels = config.channels
     if #channels == 0 then
@@ -103,10 +105,10 @@ local function handle_channel_id(id)
 end
 
 local function handle_cec(key)
-    if key == "channel-down" then
-        handle_channel_down()
-    elseif key == "channel-up" then
+    if key == cec_mapping[1] then
         handle_channel_up()
+    elseif key == cec_mapping[2] then
+        handle_channel_down()
     end
 end
 

@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
   </head>
   <body>
-    <button id='up' class='btn btn-default'>Channel Up</button>
-    <button id='down' class='btn btn-default'>Channel Down</button>
+    <p>
+      <button id='up' class='btn btn-default'>Channel Up</button>
+      <button id='down' class='btn btn-default'>Channel Down</button>
+    </p>
+    <p id='channels-chooser'></p>
 
     <script src="hosted.js"></script>
-
     <script>
       ib.setDefaultStyle();
 
@@ -19,10 +21,7 @@
       document.getElementById('down').addEventListener('click', function(evt) {
         ib.sendCommand("channel/down");
       });
-    </script>
-    <div id=channels-chooser></div>
-    <script>
-      ib.setDefaultStyle();
+
       ib.ready.then(function() {
         var container = document.getElementById('channels-chooser');
         if (ib.config.channels.length == 0) {
@@ -39,7 +38,7 @@
           btn.appendChild(document.createTextNode(channel_name));
           btn.classList.add('btn');
           btn.classList.add('btn-default');
-          let payload =  (parseInt(channel_id)+1).toString();
+          let payload = (parseInt(channel_id)+1).toString();
           btn.addEventListener('click', function(evt) {
             ib.sendCommand("channel/id", payload);
           });

@@ -46,9 +46,19 @@
         "default": "package.png"
     }, {
         "title": "Audio",
-        "ui_width": 4,
+        "ui_width": 2,
         "name": "audio",
         "type": "boolean",
         "default": true
+    }, {
+        "title": "Remote control channel switching",
+        "ui_width": 6,
+        "name": "cec_mapping",
+        "type": "select",
+        "options": [
+            [["channel-up", "channel-down"], "Using channel buttons (default)"],
+            [["up", "right"], "Up/right (for some odd TVs)"]
+        ],
+        "default": ["channel-up", "channel-down"]
     }]
 }
