@@ -1,17 +1,17 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 import zipfile, os, sys
 if not os.path.exists('EXTRACTED'):
     z = zipfile.ZipFile('streamer.zip', 'r')
     z.extractall('.')
     z.close()
     with open('EXTRACTED', 'wb') as out:
-        out.write('yes')
+        out.write(b'yes')
 
 from hosted import config
 config.restart_on_update()
 
 import time, traceback, threading
-from Queue import Queue
+from queue import Queue
 from ibquery import InfoBeamerQuery
 
 def run_in_thread(fn):
@@ -56,13 +56,13 @@ def start_stream(url):
         "--player-external-http-port", "8000",
         url, "best",
     ])
-    print >>sys.stderr, sys.argv
+    print(repr(sys.argv))
     from streamlink_cli.main import main
     try:
         main()
     except SystemExit:
-        print >>sys.stderr, "Cannot start stream. waiting 30 seconds"
+        sys.stderr.write("Cannot start stream. waiting 30 seconds\n")
         time.sleep(30)
 
-stream_url = q.get()
+stream_url = q.get().decode('utf8')
 start_stream(stream_url)

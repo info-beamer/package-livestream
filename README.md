@@ -30,6 +30,10 @@ node to the following paths:
 
 ## Updates
 
+### Version sl-2.1.2
+
+Updated bundled streamlink to 2.1.2
+
 ### Version pi4
 
 Updated for Pi4 compatibility.
