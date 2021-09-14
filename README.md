@@ -30,6 +30,10 @@ node to the following paths:
 
 ## Updates
 
+### Version sl-2.4.0
+
+Updated bundled streamlink to 2.4.0
+
 ### Version sl-2.1.2
 
 Updated bundled streamlink to 2.1.2
