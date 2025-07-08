@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+import sys, os
+sys.path.insert(0, os.path.join(os.getcwd(), '.extracted'))
+
 from hosted import config
 config.restart_on_update()
 

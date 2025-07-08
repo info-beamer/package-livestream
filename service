@@ -1,8 +1,9 @@
 #!/bin/sh
-# bump3
-export LD_LIBRARY_PATH=$PWD
-if [ ! -e EXTRACTED ]; then
-    tar xfvz streamer.tgz
-    touch EXTRACTED
+# bump14
+if [ ! -e .extracted/complete ]; then
+    mkdir -p .extracted
+    tar xfvz streamer.tgz -C .extracted
+    touch .extracted/complete
 fi
+export LD_LIBRARY_PATH=$PWD/.extracted
 exec python3 ./streamlink_wrap.py

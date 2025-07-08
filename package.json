@@ -3,7 +3,7 @@
     "author": "Florian Wesch <fw@info-beamer.com>",
     "desc": "Play from various internet stream sources. Experimental",
     "lifecycle": "beta",
-    "version": "sl-2.4.0",
+    "version": "sl-7.4.0",
     "platforms": ["pi/epoch-1", "pi/epoch-2"],
     "runtime": {
         "outside_sources": true
